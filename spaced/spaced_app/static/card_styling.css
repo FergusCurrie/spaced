@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.parent-div {
+    width: 100%; /* Full width of the viewport */
+    height: auto; /* Height is determined by its content */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centering the child elements */
+}
+
+.flashcard {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Adds scrollbar if content overflows */
+}
+
+.flashcard:hover {
+    top: -10px;
+}
+
+.flashcard-title {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.flashcard-content {
+    color: #666;
+    width: 100%; /* Ensure the content does not exceed the card's width */
+    overflow: hidden; /* Hide overflowed content or use 'auto' for scrollbars */
+}
+
+#question-card, #answer-card {
+    width: 100%; /* Make sure the question and answer cards fill the flashcard */
+    overflow: hidden; /* Adjust as necessary for your design */
+}
+
+#difficultyButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adds space between buttons */
+    margin-top: 20px; /* Adds some space above the buttons */
+}
+
+#difficultyButtons a button, #showAnswerButton {
+    padding: 10px 20px; /* Padding inside the buttons */
+    border: none; /* Removes the border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #007bff; /* Bootstrap primary color for consistency */
+    color: white; /* Text color */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Changes cursor to indicate clickable */
+    transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+#difficultyButtons a button:hover, #showAnswerButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+#difficultyButtons a button:focus, #showAnswerButton:focus {
+    outline: none; /* Removes the outline to keep the design clean */
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Adds a subtle focus indicator */
+}

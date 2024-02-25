@@ -1,5 +1,44 @@
-{% extends "base.html" %} 
-{% block title %} Home Page {% endblock %}
+{% extends "base.html" %}
+{% block title %} Hcard {% endblock %}
 {% block content %}
-<p>Hello baby \(x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\)</p>
+
+{% if card %}
+<div class="flashcard-container">
+  <div class="flashcard">
+    <h2>{{ card.question }}</h2>
+    <!-- Initially hide the answer paragraph -->
+    <hr>
+    <h2 id="answer" style="display: none;">{{ card.answer }}</h2>
+  </div>
+</div>
+
+<!-- Initially hide the difficulty buttons -->
+<div id="difficultyButtons" style="display: none;">
+  <a href="?index={{ next_index }}&difficulty=easy"><button>Easy</button></a>
+  <a href="?index={{ next_index }}&difficulty=medium"><button>Medium</button></a>
+  <a href="?index={{ next_index }}&difficulty=hard"><button>Hard</button></a>
+</div>
+
+
+<!-- Show Answer Button -->
+<button onclick="showAnswer()" id="showAnswerButton">Show Answer</button>
+{% else %}
+<p>No cards available.</p>
+{% endif %}
+
+<script>
+function showAnswer() {
+  var answer = document.getElementById('answer');
+  var difficultyButtons = document.getElementById('difficultyButtons');
+  var showAnswerButton = document.getElementById('showAnswerButton');
+  
+  // Show the answer
+  answer.style.display = 'block';
+  // Hide the "Show Answer" button
+  showAnswerButton.style.display = 'none';
+  // Show the difficulty buttons
+  difficultyButtons.style.display = 'block';
+}
+</script>
+
 {% endblock %}
