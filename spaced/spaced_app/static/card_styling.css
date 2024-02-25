@@ -61,7 +61,7 @@ body {
     margin-top: 20px; /* Adds some space above the buttons */
 }
 
-#difficultyButtons a button, #showAnswerButton {
+#difficultyButtons a button, #showAnswerButton, #printBtn {
     padding: 10px 20px; /* Padding inside the buttons */
     border: none; /* Removes the border */
     border-radius: 5px; /* Rounded corners */
@@ -72,11 +72,11 @@ body {
     transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
 
-#difficultyButtons a button:hover, #showAnswerButton:hover {
+#difficultyButtons a button:hover, #showAnswerButton:hover, #printBtn:hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
 
-#difficultyButtons a button:focus, #showAnswerButton:focus {
+#difficultyButtons a button:focus, #showAnswerButton:focus, #printBtn:focus {
     outline: none; /* Removes the outline to keep the design clean */
     box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Adds a subtle focus indicator */
 }

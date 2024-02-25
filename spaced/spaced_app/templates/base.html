@@ -2,12 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Load MathJax -->
+     <!-- Load MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!--  KATEX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <!--- QUIL -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    
+
+
     <title>
      {%  block title %}
         SPACED 
@@ -20,23 +37,74 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="#">SPACED</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+ 
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="review_cards">Review cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="add_cards">Add cards</a>
+            </li>
         </ul>
-      </div>
-    </nav>
+
+  </nav>
     
-    <div class="flashcard-container">{% block content %} {% endblock %}</div>
+    <div>{% block content %} {% endblock %}</div>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- Initialize Quill editor -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var quill_question = new Quill('#editor_question', {
+            modules: {
+                toolbar: [
+                    ['bold', 'italic', 'underline'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    ['formula'], // Include 'formula' here
+                    ['link', 'image']
+                ]
+            },
+            theme: 'snow'
+          });
+          var quill_answer = new Quill('#editor_answer', {
+            modules: {
+                toolbar: [
+                    ['bold', 'italic', 'underline'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    ['formula'], // Include 'formula' here
+                    ['link', 'image']
+                ]
+            },
+            theme: 'snow'
+          });
+          function updateResults() {
+            var editorContent1 = quill1.root.innerHTML;
+            var editorContent2 = quill2.root.innerHTML;
+            
+            // You can perform any logic to generate the results based on the editor content
+            var results = "Results for Editor 1: " + editorContent1 + "<br><br>";
+            results += "Results for Editor 2: " + editorContent2;
+    
+            // Update the results container
+            document.getElementById('results').innerHTML = results;
+          }
+          document.getElementById('printBtn').addEventListener('click', function() {
+            var editorContentQuestion = document.createElement('div');
+            editorContentQuestion.innerHTML = quill_question.root.innerHTML; // Get the content of the question editor
+            
+            var editorContentAnswer = document.createElement('div');
+            editorContentAnswer.innerHTML = quill_answer.root.innerHTML; // Get the content of the answer editor
+            
+            var combinedContent = editorContentQuestion.innerHTML + "<br><br>" + editorContentAnswer.innerHTML; // Combine content from both editors
+            
+            var hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = 'content';
+            hiddenInput.value = combinedContent;
+            
+            this.appendChild(hiddenInput);
+        });
+      });
+      </script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
   </body>

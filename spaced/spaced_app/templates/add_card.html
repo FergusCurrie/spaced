@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Adds Cards {% endblock %}
+{% block content %}
+
+<h1>Add cards</h1>
+
+
+<form id="editorForm" method="post" action="{% url 'add_cards_name' %}">
+    {% csrf_token %}
+    <h5>Question:</h5>
+    <div id="editor_question">
+        <p></p>
+    </div>
+    <hr>
+    <h5>Answer:</h5>
+    <div id="editor_answer">
+        <p></p>
+    </div>
+    <button type="submit" id="printBtn">Add card</button>
+</form>
+
+{% endblock %}
+
+
+
