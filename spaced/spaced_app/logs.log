@@ -1,0 +1,186 @@
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'regression coefficient'
+        Definition: None
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'covariate'
+        Definition: None
+        Base Equation: $X$
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'regression error term'
+        Definition: theoretical unexplained error of regression
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'mean'
+        Definition: None
+        Base Equation: $\dfrac{1}{n} \sum X - \mu_X$
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'dependent variable'
+        Definition: observed outcome
+        Base Equation: $Y$
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'regression function'
+        Definition: None
+        Base Equation: $Y = \beta_0 + \beta X + \epsilon$
+        Relational Equation [[dependent variable]] = [[intercept]] + [[matmul]]([[regression coefficient]], [[design matrix]]) +  [[regression error term]]
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'conditional expectation function'
+        Definition: None
+        Base Equation: $E[Y|X]$
+        Relational Equation [[expectation]]([[dependent variable]] [[given]] [[independent variable]])
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'correlated'
+        Definition: None
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'argmin'
+        Definition: return argument which minimise function
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'conditional expectation decomposition property'
+        Definition: None
+        Base Equation: $Y = E[Y | X] + \epsilon$
+        Relational Equation Y = [[conditional expectation function]] + \epsilon
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'law of iterated expectations'
+        Definition: None
+        Base Equation: $E[Y] = E[E[Y|X]]$
+        Relational Equation [[expectation]]([[dependent variable]]) = [[expectation]]([[conditional expectation function]])
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'best linear predictor theorem'
+        Definition: $\beta X$ is [[minimum mean squared error estimator]] of [[dependent variable]] [[given]] [[independent variable]]
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'function'
+        Definition: None
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'square'
+        Definition: None
+        Base Equation: $f(x) = x^2$
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'conditional expectation function prediction property'
+        Definition: None
+        Base Equation: $E[Y | X] = argmin_{f(x)} E[(Y - f(x))^2]$
+        Relational Equation [[conditional expectation function]] = [[minimum mean squared error estimator]]([[dependent variable]], [[independent variable]])
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'correlation'
+        Definition: None
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'regression residual'
+        Definition: None
+        Base Equation: $Y - BX$
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'regression conditional expectation theorem'
+        Definition: $\beta X$ is [[minimum mean squared error estimator]] linear approximation to [[conditional expectation function]]
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'anova theorem'
+        Definition: blah
+        Base Equation: $Var(Y) = Var(E[Y|X]) + E[Var(Y|X)]$
+        Relational Equation [[variance]]([[dependent variable]]) = [[variance]]([[conditional expectation function]]) + [[expectation]]([[variance]]([[dependent variable]] [[given]] [[covariate]]))
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'expectation'
+        Definition: None
+        Base Equation: $\int p(x)x dx$
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'CEF'
+        Definition: None
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'intercept'
+        Definition: constant in regression
+        Base Equation: $E[Y] - \beta [[E[X]]]$
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'minimum mean squared error estimator'
+        Definition: None
+        Base Equation: $f = argmin_{f(x)}E[(Y_i - f(x))^2]$
+        Relational Equation [[argmin]]([[function]])([[expectation]] [[square]]([[independent variable]] - [[dependent variable]]))
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'uncorrelated'
+        Definition: !not [[correlation]]
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'independent variable'
+        Definition: None
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'design matrix'
+        Definition: matrix stacking [[independent variable]] for all data points
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'variance'
+        Definition: None
+        Base Equation: $E[(X - \mu)^2]$
+        Relational Equation [[expectation]]([[square]]([[centered]]([[covariate]] - [[mean]]([[covariate]]))))
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'linear'
+        Definition: None
+        Base Equation: None
+        Relational Equation None
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'linear conditional expectation theorem'
+        Definition: None
+        Base Equation: None
+        Relational Equation [[ifthen]] ([[linear]]) ([[conditional expectation function]] = [[regression function]]) ([[conditional expectation function]] != [[regression function]])
+        
+2024-03-02 11:36:19,767 - INFO - 
+        Page: 'given'
+        Definition: conditional probability
+        Base Equation: $|$
+        Relational Equation None
+        
+2024-03-02 11:36:19,768 - INFO - 
+        Page: 'ifthen'
+        Definition: None
+        Base Equation: None
+        Relational Equation None
+        

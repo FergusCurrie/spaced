@@ -15,16 +15,19 @@
 
 <!-- Initially hide the difficulty buttons -->
 <div id="difficultyButtons" style="display: none;">
-  <a href="?index={{ next_index }}&difficulty=easy"><button>Easy</button></a>
-  <a href="?index={{ next_index }}&difficulty=medium"><button>Medium</button></a>
-  <a href="?index={{ next_index }}&difficulty=hard"><button>Hard</button></a>
+  <a href="?index={{ next_index }}&difficulty=0"><button>0</button></a>
+  <a href="?index={{ next_index }}&difficulty=1"><button>1</button></a>
+  <a href="?index={{ next_index }}&difficulty=2"><button>2</button></a>
+  <a href="?index={{ next_index }}&difficulty=3"><button>3</button></a>
+  <a href="?index={{ next_index }}&difficulty=4"><button>4</button></a>
+  <a href="?index={{ next_index }}&difficulty=5"><button>5</button></a>
 </div>
 
 
 <!-- Show Answer Button -->
 <button onclick="showAnswer()" id="showAnswerButton">Show Answer</button>
 {% else %}
-<p>No cards available.</p>
+<p>All cards studied for now.</p>
 {% endif %}
 
 <script>

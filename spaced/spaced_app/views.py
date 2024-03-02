@@ -1,9 +1,15 @@
 from django.shortcuts import render, HttpResponse
-from .models import Card, Review 
+from .models import Card, Review, CardState
 from django.shortcuts import redirect
 from django.utils import timezone
 from django.urls import reverse
 from bs4 import BeautifulSoup
+import os 
+from .import_from_obsidian import do_generate
+import datetime 
+
+
+EASE_FACTOR_INIT = 2.5 
 
 def home(request):
     url = reverse('review_cards_name') 
@@ -27,45 +33,49 @@ def parse_content(content) -> (str, str):
 
 def add_cards(request):
     content = request.POST.get('content')
+    generate = request.POST.get('generate')
     if content:
         parse_content(content)
+    if generate: 
+        cards = do_generate()
+        for question, answer in cards:
+            print(question, answer)
+            Card.objects.create(question=question, answer=answer, created=timezone.now())
     return render(request, "add_card.html", {})
 
-def sort_cards_by_ease(cards, reviews):
+def sm2_algorithm(q, n, EF, I):
+    """
+    Implements the SM-2 algorithm used in spaced repetition systems.
 
-    to_review = []
-    to_review_weight = []
-    for card in cards: 
-        card_reviews = sorted([r for r in reviews if r.card == card], key=lambda review: review.date)
-        if len(card_reviews) ==0:
-            to_review.append(card)
-            to_review_weight.append(0)
-            continue 
-        interval = 0 
-        for review in card_reviews:
-            if review.ease == 3:
-                interval = 0
-            if review.ease == 2:
-                interval += 1
-            if review.ease == 1:
-                if interval == 0:
-                    interval = 1
-                interval *= 1.5 
-        days_since_first_review = (timezone.now() - card_reviews[0].date).seconds / (60 * 24)
-        
-        remaining_interval = days_since_first_review - interval 
-        if remaining_interval > 0:
-            # add to review stack, weighted by diff 
-            to_review.append(card)
-            to_review_weight.append(remaining_interval)
+    Parameters:
+    q (int): User grade (quality response to the flashcard, typically from 0 to 5)
+    n (int): Repetition number for the current flashcard
+    EF (float): Current easiness factor of the flashcard
+    I (int): Current interval before the flashcard is to be reviewed again
+
+    Returns:
+    tuple: Updated values of n, EF, and I
+    """
+    
+    # Check if the response was correct
+    if q >= 3:
+        if n == 0:
+            I = 1
+        elif n == 1:
+            I = 6
         else:
-            # else pass 
-            pass
+            I = round(I * EF)
+        n += 1
+    else:  # Incorrect response
+        n = 0
+        I = 1
 
-    sorted_pairs = sorted(zip(to_review, to_review_weight), key=lambda x: x[1], reverse=True)
-    sorted_to_review = [pair[0] for pair in sorted_pairs]
-    return sorted_to_review
+    # Update the easiness factor
+    EF = EF + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
+    if EF < 1.3:
+        EF = 1.3
 
+    return n, EF, I
 
 # Create your views here.
 def review_cards(request):
@@ -81,10 +91,29 @@ def review_cards(request):
     
     # Get all cards (or a subset if you have too many)
     cards = list(Card.objects.all())
+    card_states = list(CardState.objects.all())
     reviews = list(Review.objects.all())
-    
-    cards = sort_cards_by_ease(cards, reviews)
+    card_states_indexs = [x.card.id for x in card_states]
 
+    # Clear out cards which aren't ready for review 
+    cards_to_review = []
+    for card in cards:
+        if card.id not in card_states_indexs:
+            cards_to_review.append(card)
+        else:
+            # card has a state, get it 
+            card_state = card_states[card_states_indexs.index(card.id)]
+            interval = card_state.inter_repetition_interval
+            # get reviews then most recent 
+            most_recent_review = max([x.date for x in reviews if x.card.id == card.id])
+
+            today = timezone.now()
+            if (today - most_recent_review).days >= interval:
+                cards_to_review.append(card)
+
+    cards = cards_to_review
+
+    
     # Ensure the index is within bounds
     if card_index < 0:
         card_index = 0
@@ -94,11 +123,32 @@ def review_cards(request):
     
     # Select the card to display
     card = cards[card_index] if cards else None
+    card_state = None 
+    if card:
+        for state in card_states:
+            if state.card.id == card.id:
+                card_state = state
 
-    if difficulty in ['easy', 'medium', 'hard']:
-        ease = {'easy': 1, 'medium': 2, 'hard': 3}.get(difficulty)
+    if difficulty in ['0', '1', '2', '3', '4', '5']:
+        ease = int(difficulty)
+
         # Create and save the review only if difficulty parameter is present
         Review.objects.create(card=card, date=timezone.now(), ease=ease)
+
+        if not card_state:
+            n, ef, i = sm2_algorithm(ease, 0, EASE_FACTOR_INIT, 0)
+            print(n, ef,i )
+            CardState.objects.create(card=card, repetition_number = n,  ease_factor=ef, inter_repetition_interval=i)
+        else:
+            # update state 
+            record = CardState.objects.get(id=card_state.id)
+            n, ef, i = sm2_algorithm(ease, record.repetition_number, record.ease_factor, record.inter_repetition_interval)
+            record.repetition_number = n
+            record.ease_factor = ef
+            record.inter_repetition_interval = i
+            record.save()
+            record = CardState.objects.get(id=card_state.id)
+            print(record)
         
         # Redirect to the next card to prevent resubmission of the review on refresh
         next_index = (card_index + 1) % len(cards)

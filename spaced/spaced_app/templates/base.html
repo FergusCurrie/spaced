@@ -45,6 +45,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="add_cards">Add cards</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin">admin</a>
+          </li>
         </ul>
 
   </nav>
@@ -103,6 +106,13 @@
             
             this.appendChild(hiddenInput);
         });
+        document.getElementById('generate_button').addEventListener('click', function() {
+          var hiddenInput = document.createElement('input');
+          hiddenInput.type = 'hidden';
+          hiddenInput.name = 'generate';
+          hiddenInput.value = "generate";
+          this.appendChild(hiddenInput);
+      });
       });
       </script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
