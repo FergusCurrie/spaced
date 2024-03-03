@@ -78,7 +78,7 @@ def parse_line(line):
 
 def get_file_contents() -> dict:
     contents = {}
-    path = "/Users/ferguscurrie/spaced_vault"
+    path = "spaced_vault"
     filenames = [x for x in os.listdir(path) if ".md" in x]
     for filename in filenames:
         with open(f"{path}/{filename}", "r") as file:
