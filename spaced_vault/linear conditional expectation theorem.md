@@ -1,0 +1,1 @@
+relational_equation = [[ifthen]] ([[linear]]) ([[conditional expectation function]] = [[regression function]]) ([[conditional expectation function]] != [[regression function]])

@@ -1,0 +1,191 @@
+{
+  "main": {
+    "id": "b6356ba47bb4f8ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "aa936d65c73e433e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5ea6f6668e87a593",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "variance.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3cfec597e9caa549",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "anova theorem.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1eb0f082cb47bf95",
+    "type": "split",
+    "children": [
+      {
+        "id": "23eff7572d377b1a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "627821944cb24153",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c8e9265963cce4fb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5562392735d7c0ee",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "2098dafc42b746bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "879d90257a37d95e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "84187d57479b87a1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "anova theorem.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "df3a26825a84515e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "anova theorem.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "88813dd8830f678c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5535097b038e1a63",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "anova theorem.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "3cfec597e9caa549",
+  "lastOpenFiles": [
+    "best linear predictor theorem.md",
+    "anova theorem.md",
+    "mean.md",
+    "variance.md",
+    "uncorrelated.md",
+    "square.md",
+    "regression residual.md",
+    "regression function.md",
+    "regression error term.md",
+    "regression conditional expectation theorem.md",
+    "regression coefficient.md",
+    "minimum mean squared error estimator.md",
+    "linear conditional expectation theorem.md",
+    "linear.md",
+    "law of iterated expectations.md",
+    "intercept.md",
+    "independent variable.md",
+    "given.md",
+    "function.md",
+    "expectation.md",
+    "design matrix.md",
+    "dependent variable.md",
+    "covariate.md",
+    "correlation.md",
+    "correlated.md",
+    "conditional expectation function prediction property.md"
+  ]
+}

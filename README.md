@@ -1,6 +1,3 @@
-- brew install -cask mactex
+# Spaced
 
-Django commands:
-python3 manage.py startapp <appname> # create new app
-python3 manage.py makemigrations spaced_app # stagge database based on models
-python3 manage.py migrate # apply staged changes
+Software for spaced repetition. Runs the sm2 algorithm on a django web server.

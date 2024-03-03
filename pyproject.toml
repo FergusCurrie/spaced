@@ -2,8 +2,9 @@
 name = "spaced"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Fergus Currie"]
 readme = "README.md"
+packages = [{include = "*", from="core/src"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -11,6 +12,14 @@ matplotlib = "^3.8.3"
 pylatex = "^1.4.2"
 django = "^5.0.2"
 bs4 = "^0.0.2"
+pytest = "^8.0.2"
+
+[tool.poe.tasks]
+test = "pytest "      # a simple command task
+run = "python spaced/manage.py runserver"
+make_migration = "python3 spaced/manage.py makemigrations"
+execute_migration = "python spaced/manage.py migrate"
+migrate = ["make_migration", "execute_migration"]
 
 
 [build-system]

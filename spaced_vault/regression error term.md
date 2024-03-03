@@ -1,0 +1,1 @@
+definition = theoretical unexplained error of regression 
