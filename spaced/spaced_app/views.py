@@ -1,13 +1,20 @@
-from django.shortcuts import render, HttpResponse
-from .models import Card, Review, CardState
+from django.shortcuts import render, HttpResponse, get_object_or_404
+from .models import Card, Review, AtomState, Atom
 from django.shortcuts import redirect
 from django.utils import timezone
 from django.urls import reverse
 from bs4 import BeautifulSoup
 from sm2_algorithm import sm2_algorithm
-from .import_from_obsidian import do_generate
+from import_from_obsidian import do_generate, get_all_atoms
+import random 
+import logging
 
+logger = logging.getLogger(__name__)
 
+# # Step 2: Configure logging
+# logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='logs.log', filemode='w')
+
+# logging.info('Initalised logger ')
 
 EASE_FACTOR_INIT = 2.5 
 
@@ -23,110 +30,137 @@ def clean_latex(s: str):
         element.replace_with(f"\({data_value}\)")
     return str(soup).replace("<p>","").replace("</p>","")
 
+def check_if_card_question_exists_in_db(question) -> bool:
+    cards = list(Card.objects.all())
+    for card in cards:
+        if card.question == question:
+            return True
+    return False 
+
+def check_if_atom_name_exists_in_db(name) -> bool:
+    cards = list(Atom.objects.all())
+    for card in cards:
+        if card.name == name:
+            return True
+    return False
+
+def add_card(atom_name, atom_type, question, answer):
+    if check_if_card_question_exists_in_db(question):
+        logging.info(f"card {question} already in db")
+        return 
+    
+    atom = get_object_or_404(Atom, name=atom_name)
+    Card.objects.create(atom=atom, question=question, answer=answer, created=timezone.now())
+    logging.info(f"created new card: {question} {answer}")
+
+def add_atom(name, atom_type):
+    if check_if_atom_name_exists_in_db(name):
+        logging.info(f"atom {name} already in db")
+        return 
+
+    atom = Atom.objects.create(name=name, type=atom_type, created=timezone.now())
+    AtomState.objects.create(
+        atom=atom, 
+        repetition_number = 0,  
+        ease_factor=EASE_FACTOR_INIT, 
+        inter_repetition_interval= 0 #random.choice([0,1,2,3])
+    )
+    logging.info(f"created new atom: {name}")
+
 def parse_content(content) -> (str, str):
     question, answer = content.split("<br><br>")
     question, answer = clean_latex(question), clean_latex(answer)
     if question != "<br/>" and answer != "<br/>":
         print(question, answer)
-        Card.objects.create(question=question, answer=answer, created=timezone.now())
+        raise Exception("Only adding from obisidian currently")
     
-
 def add_cards(request):
+    logging.info('add cards called')
     content = request.POST.get('content')
     generate = request.POST.get('generate')
     if content:
         parse_content(content)
     if generate: 
+        atoms = get_all_atoms()
+        for atom_name, atom_type in atoms:
+            add_atom(atom_name, atom_type)
         cards = do_generate()
-        for question, answer in cards:
-            print(question, answer)
-            Card.objects.create(question=question, answer=answer, created=timezone.now())
+        for atom_name, type, question, answer in cards:
+            add_card(atom_name, type, question, answer)
     return render(request, "add_card.html", {})
 
 
 
 # Create your views here.
 def review_cards(request):
-
-    # Retrieve the card index from URL parameter, defaulting to 0
-    card_index = request.GET.get('index', 0)
     difficulty = request.GET.get('difficulty', None)
     
-    try:
-        card_index = int(card_index)
-    except ValueError:
-        card_index = 0
-    
     # Get all cards (or a subset if you have too many)
-    cards = list(Card.objects.all())
-    card_states = list(CardState.objects.all())
+    atoms = list(Atom.objects.all())
+    states = list(AtomState.objects.all())
     reviews = list(Review.objects.all())
-    card_states_indexs = [x.card.id for x in card_states]
+    atom_states_indexs = [x.atom.id for x in states]
 
     # Clear out cards which aren't ready for review 
-    cards_to_review = []
-    for card in cards:
-        if card.id not in card_states_indexs:
-            cards_to_review.append(card)
+    atoms_to_review = []
+    for atom in atoms:
+        if atom.id not in atom_states_indexs:
+            atoms_to_review.append(card)
         else:
             # card has a state, get it 
-            card_state = card_states[card_states_indexs.index(card.id)]
-            interval = card_state.inter_repetition_interval
+            atom_state = states[atom_states_indexs.index(atom.id)]
+            interval = atom_state.inter_repetition_interval
             # get reviews then most recent 
-            most_recent_review = max([x.date for x in reviews if x.card.id == card.id])
-
+            reviews_of_atom = [x.date for x in reviews if x.atom.id == atom.id]
+            if len(reviews_of_atom) > 0:
+                most_recent_review = max(reviews_of_atom)
+            else:
+                most_recent_review = atom.created
             today = timezone.now()
             if (today - most_recent_review).days >= interval:
-                cards_to_review.append(card)
+                atoms_to_review.append(atom)
 
-    cards = cards_to_review
-
-    
-    # Ensure the index is within bounds
-    if card_index < 0:
-        card_index = 0
-    elif card_index >= len(cards):
-        # Optionally loop to start or stop at the last
-        card_index = 0  # or len(cards) - 1 for stopping at the last
+    atoms = atoms_to_review
     
     # Select the card to display
-    card = cards[card_index] if cards else None
-    card_state = None 
-    if card:
-        for state in card_states:
-            if state.card.id == card.id:
-                card_state = state
+    atom = atoms[0] if atoms else None
+    atom_state = None 
+    card = None 
+    if atom:
+        for state in states:
+            if state.atom.id == atom.id:
+                atom_state = state
+        atom_cards = Card.objects.filter(atom=atom)
+        if len(atom_cards) > 0:
+            card = random.choice(atom_cards)
 
     if difficulty in ['0', '1', '2', '3', '4', '5']:
         ease = int(difficulty)
 
         # Create and save the review only if difficulty parameter is present
-        Review.objects.create(card=card, date=timezone.now(), ease=ease)
+        Review.objects.create(card=card, atom=atom, date=timezone.now(), ease=ease)
 
-        if not card_state:
-            n, ef, i = sm2_algorithm(ease, 0, EASE_FACTOR_INIT, 0)
-            print(n, ef,i )
-            CardState.objects.create(card=card, repetition_number = n,  ease_factor=ef, inter_repetition_interval=i)
-        else:
-            # update state 
-            record = CardState.objects.get(id=card_state.id)
-            n, ef, i = sm2_algorithm(ease, record.repetition_number, record.ease_factor, record.inter_repetition_interval)
-            record.repetition_number = n
-            record.ease_factor = ef
-            record.inter_repetition_interval = i
-            record.save()
-            record = CardState.objects.get(id=card_state.id)
-            print(record)
-        
-        # Redirect to the next card to prevent resubmission of the review on refresh
-        next_index = (card_index + 1) % len(cards)
-        url = reverse('review_cards_name') + f'?index={next_index}'
+
+        # update state 
+        record = AtomState.objects.get(id=atom_state.id)
+        previous_repetition_number = record.repetition_number
+        previous_ease_factor =  record.ease_factor
+        previous_interval = record.inter_repetition_interval
+        n, ef, i = sm2_algorithm(ease, record.repetition_number, record.ease_factor, record.inter_repetition_interval)
+        record.repetition_number = n
+        record.ease_factor = ef
+        record.inter_repetition_interval = i
+        record.save()
+        record = AtomState.objects.get(id=atom_state.id)
+
+        # log 
+        logging.info(f"Studied atom {atom.name} with previous settings (rep, ease, int)=({previous_repetition_number},{previous_ease_factor},{previous_interval}) ease={ease}, updated to ({n},{ef},{i})")
+        url = reverse('review_cards_name')
         return redirect(url)
     
     # Pass the card and next index to the template
     context = {
         'card': card,
-        'next_index': card_index  # Increment for the next card
     }
     # Pass the random card to the template context
     return render(request, "review_cards.html", context)

@@ -1,0 +1,230 @@
+2024-03-03 01:53:56,460 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:53:56,677 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:54:48,475 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:54:48,630 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:55:10,054 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:55:10,237 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:55:21,488 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:55:21,671 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:55:23,841 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:55:24,012 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:55:38,621 - INFO - add cards called
+2024-03-03 01:55:39,527 - INFO - add cards called
+2024-03-03 01:55:39,544 - INFO - created new atom: covariate
+2024-03-03 01:55:39,548 - INFO - created new atom: regression error term
+2024-03-03 01:55:39,553 - INFO - created new atom: mean
+2024-03-03 01:55:39,555 - INFO - created new atom: dependent variable
+2024-03-03 01:55:39,557 - INFO - created new atom: regression function
+2024-03-03 01:55:39,559 - INFO - created new atom: conditional expectation function
+2024-03-03 01:55:39,561 - INFO - created new atom: argmin
+2024-03-03 01:55:39,563 - INFO - created new atom: conditional expectation decomposition property
+2024-03-03 01:55:39,564 - INFO - created new atom: law of iterated expectations
+2024-03-03 01:55:39,566 - INFO - created new atom: best linear predictor theorem
+2024-03-03 01:55:39,568 - INFO - created new atom: square
+2024-03-03 01:55:39,570 - INFO - created new atom: conditional expectation function prediction property
+2024-03-03 01:55:39,572 - INFO - created new atom: regression residual
+2024-03-03 01:55:39,574 - INFO - created new atom: regression conditional expectation theorem
+2024-03-03 01:55:39,575 - INFO - created new atom: anova theorem
+2024-03-03 01:55:39,577 - INFO - created new atom: expectation
+2024-03-03 01:55:39,579 - INFO - created new atom: intercept
+2024-03-03 01:55:39,580 - INFO - created new atom: minimum mean squared error estimator
+2024-03-03 01:55:39,582 - INFO - created new atom: uncorrelated
+2024-03-03 01:55:39,583 - INFO - created new atom: design matrix
+2024-03-03 01:55:39,585 - INFO - created new atom: variance
+2024-03-03 01:55:39,586 - INFO - created new atom: given
+2024-03-03 01:55:39,588 - INFO - created new card: What is equation of covariate \(X\)
+2024-03-03 01:55:39,589 - INFO - created new card: What atom is this equation: \(X\) covariate
+2024-03-03 01:55:39,590 - INFO - created new card: What is regression error term theoretical unexplained error of regression
+2024-03-03 01:55:39,591 - INFO - created new card: What atom has this definition: theoretical unexplained error of regression  regression error term
+2024-03-03 01:55:39,592 - INFO - created new card: What is equation of mean \(\dfrac{1}{n} \sum X - \mu_X\)
+2024-03-03 01:55:39,593 - INFO - created new card: What atom is this equation: \(\dfrac{1}{n} \sum X - \mu_X\) mean
+2024-03-03 01:55:39,594 - INFO - created new card: What is equation of dependent variable \(Y\)
+2024-03-03 01:55:39,595 - INFO - created new card: What atom is this equation: \(Y\) dependent variable
+2024-03-03 01:55:39,596 - INFO - created new card: What is equation of regression function \(Y = \beta_0 + \beta X + \epsilon\)
+2024-03-03 01:55:39,597 - INFO - created new card: What atom is this equation: \(Y = \beta_0 + \beta X + \epsilon\) regression function
+2024-03-03 01:55:39,598 - INFO - created new card: What is equation of conditional expectation function \(E[Y|X]\)
+2024-03-03 01:55:39,599 - INFO - created new card: What atom is this equation: \(E[Y|X]\) conditional expectation function
+2024-03-03 01:55:39,600 - INFO - created new card: What is argmin return argument which minimise function
+2024-03-03 01:55:39,601 - INFO - created new card: What atom has this definition: return argument which minimise function  argmin
+2024-03-03 01:55:39,601 - INFO - created new card: What is equation of conditional expectation decomposition property \(Y = E[Y | X] + \epsilon\)
+2024-03-03 01:55:39,602 - INFO - created new card: What atom is this equation: \(Y = E[Y | X] + \epsilon\) conditional expectation decomposition property
+2024-03-03 01:55:39,603 - INFO - created new card: What is equation of law of iterated expectations \(E[Y] = E[E[Y|X]]\)
+2024-03-03 01:55:39,604 - INFO - created new card: What atom is this equation: \(E[Y] = E[E[Y|X]]\) law of iterated expectations
+2024-03-03 01:55:39,605 - INFO - created new card: What is best linear predictor theorem \(\beta X\) is [[minimum mean squared error estimator]] of [[dependent variable]] [[given]] [[independent variable]]
+2024-03-03 01:55:39,606 - INFO - created new card: What atom has this definition: \(\beta X\) is [[minimum mean squared error estimator]] of [[dependent variable]] [[given]] [[independent variable]]  best linear predictor theorem
+2024-03-03 01:55:39,606 - INFO - created new card: What is equation of square \(f(x) = x^2\)
+2024-03-03 01:55:39,607 - INFO - created new card: What atom is this equation: \(f(x) = x^2\) square
+2024-03-03 01:55:39,608 - INFO - created new card: What is equation of conditional expectation function prediction property \(E[Y | X] = argmin_{f(x)} E[(Y - f(x))^2]\)
+2024-03-03 01:55:39,609 - INFO - created new card: What atom is this equation: \(E[Y | X] = argmin_{f(x)} E[(Y - f(x))^2]\) conditional expectation function prediction property
+2024-03-03 01:55:39,610 - INFO - created new card: What is equation of regression residual \(Y - BX\)
+2024-03-03 01:55:39,610 - INFO - created new card: What atom is this equation: \(Y - BX\) regression residual
+2024-03-03 01:55:39,611 - INFO - created new card: What is regression conditional expectation theorem \(\beta X\) is [[minimum mean squared error estimator]] linear approximation to [[conditional expectation function]]
+2024-03-03 01:55:39,612 - INFO - created new card: What atom has this definition: \(\beta X\) is [[minimum mean squared error estimator]] linear approximation to [[conditional expectation function]]  regression conditional expectation theorem
+2024-03-03 01:55:39,613 - INFO - created new card: What is equation of anova theorem \(Var(Y) = Var(E[Y|X]) + E[Var(Y|X)]\)
+2024-03-03 01:55:39,614 - INFO - created new card: What atom is this equation: \(Var(Y) = Var(E[Y|X]) + E[Var(Y|X)]\) anova theorem
+2024-03-03 01:55:39,615 - INFO - created new card: What is equation of expectation \(\int p(x)x dx\)
+2024-03-03 01:55:39,615 - INFO - created new card: What atom is this equation: \(\int p(x)x dx\) expectation
+2024-03-03 01:55:39,616 - INFO - created new card: What is equation of intercept \(E[Y] - \beta [[E[X]]]\)
+2024-03-03 01:55:39,617 - INFO - created new card: What atom is this equation: \(E[Y] - \beta [[E[X]]]\) intercept
+2024-03-03 01:55:39,618 - INFO - created new card: What is equation of minimum mean squared error estimator \(f = argmin_{f(x)}E[(Y_i - f(x))^2]\)
+2024-03-03 01:55:39,618 - INFO - created new card: What atom is this equation: \(f = argmin_{f(x)}E[(Y_i - f(x))^2]\) minimum mean squared error estimator
+2024-03-03 01:55:39,619 - INFO - created new card: What is uncorrelated !not [[correlation]]
+2024-03-03 01:55:39,620 - INFO - created new card: What atom has this definition: !not [[correlation]]  uncorrelated
+2024-03-03 01:55:39,621 - INFO - created new card: What is design matrix matrix stacking [[independent variable]] for all data points
+2024-03-03 01:55:39,621 - INFO - created new card: What atom has this definition: matrix stacking [[independent variable]] for all data points  design matrix
+2024-03-03 01:55:39,622 - INFO - created new card: What is equation of variance \(E[(X - \mu)^2]\)
+2024-03-03 01:55:39,623 - INFO - created new card: What atom is this equation: \(E[(X - \mu)^2]\) variance
+2024-03-03 01:55:39,624 - INFO - created new card: What is equation of given \(|\)
+2024-03-03 01:55:39,624 - INFO - created new card: What atom is this equation: \(|\) given
+2024-03-03 01:55:43,374 - INFO - Studied atom given with previous settings (rep, ease, int)=(0.0,2.5,0.0) ease=5, updated to (1.0,2.6,1)
+2024-03-03 01:55:44,980 - INFO - Studied atom variance with previous settings (rep, ease, int)=(0.0,2.5,0.0) ease=5, updated to (1.0,2.6,1)
+2024-03-03 01:55:49,632 - INFO - Studied atom design matrix with previous settings (rep, ease, int)=(0.0,2.5,0.0) ease=5, updated to (1.0,2.6,1)
+2024-03-03 01:56:37,333 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:56:37,517 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:57:35,210 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:57:35,388 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:57:37,533 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:57:37,696 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:58:29,553 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:58:29,716 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:58:40,178 - INFO - add cards called
+2024-03-03 01:58:41,130 - INFO - add cards called
+2024-03-03 01:58:41,138 - INFO - created new atom: covariate
+2024-03-03 01:58:41,142 - INFO - created new atom: regression error term
+2024-03-03 01:58:41,147 - INFO - created new atom: mean
+2024-03-03 01:58:41,151 - INFO - created new atom: dependent variable
+2024-03-03 01:58:41,155 - INFO - created new atom: regression function
+2024-03-03 01:58:41,158 - INFO - created new atom: conditional expectation function
+2024-03-03 01:58:41,159 - INFO - created new atom: argmin
+2024-03-03 01:58:41,161 - INFO - created new atom: conditional expectation decomposition property
+2024-03-03 01:58:41,163 - INFO - created new atom: law of iterated expectations
+2024-03-03 01:58:41,165 - INFO - created new atom: best linear predictor theorem
+2024-03-03 01:58:41,167 - INFO - created new atom: square
+2024-03-03 01:58:41,169 - INFO - created new atom: conditional expectation function prediction property
+2024-03-03 01:58:41,170 - INFO - created new atom: regression residual
+2024-03-03 01:58:41,172 - INFO - created new atom: regression conditional expectation theorem
+2024-03-03 01:58:41,174 - INFO - created new atom: anova theorem
+2024-03-03 01:58:41,176 - INFO - created new atom: expectation
+2024-03-03 01:58:41,178 - INFO - created new atom: intercept
+2024-03-03 01:58:41,180 - INFO - created new atom: minimum mean squared error estimator
+2024-03-03 01:58:41,181 - INFO - created new atom: uncorrelated
+2024-03-03 01:58:41,183 - INFO - created new atom: design matrix
+2024-03-03 01:58:41,184 - INFO - created new atom: variance
+2024-03-03 01:58:41,185 - INFO - created new atom: given
+2024-03-03 01:58:41,188 - INFO - created new card: What is equation of covariate \(X
+2024-03-03 01:58:41,189 - INFO - created new card: What atom is this equation: \(X covariate
+2024-03-03 01:58:41,190 - INFO - created new card: What is regression error term theoretical unexplained error of regressio
+2024-03-03 01:58:41,191 - INFO - created new card: What atom has this definition: theoretical unexplained error of regressio  regression error term
+2024-03-03 01:58:41,192 - INFO - created new card: What is equation of mean \(\dfrac{1}{n} \sum X - \mu_X
+2024-03-03 01:58:41,193 - INFO - created new card: What atom is this equation: \(\dfrac{1}{n} \sum X - \mu_X mean
+2024-03-03 01:58:41,194 - INFO - created new card: What is equation of dependent variable \(Y
+2024-03-03 01:58:41,195 - INFO - created new card: What atom is this equation: \(Y dependent variable
+2024-03-03 01:58:41,196 - INFO - created new card: What is equation of regression function \(Y = \beta_0 + \beta X + \epsilon
+2024-03-03 01:58:41,197 - INFO - created new card: What atom is this equation: \(Y = \beta_0 + \beta X + \epsilon regression function
+2024-03-03 01:58:41,198 - INFO - created new card: What is equation of conditional expectation function \(E[Y|X]
+2024-03-03 01:58:41,199 - INFO - created new card: What atom is this equation: \(E[Y|X] conditional expectation function
+2024-03-03 01:58:41,199 - INFO - created new card: What is argmin return argument which minimise functio
+2024-03-03 01:58:41,200 - INFO - created new card: What atom has this definition: return argument which minimise functio  argmin
+2024-03-03 01:58:41,201 - INFO - created new card: What is equation of conditional expectation decomposition property \(Y = E[Y | X] + \epsilon
+2024-03-03 01:58:41,202 - INFO - created new card: What atom is this equation: \(Y = E[Y | X] + \epsilon conditional expectation decomposition property
+2024-03-03 01:58:41,203 - INFO - created new card: What is equation of law of iterated expectations \(E[Y] = E[E[Y|X*
+2024-03-03 01:58:41,204 - INFO - created new card: What atom is this equation: \(E[Y] = E[E[Y|X* law of iterated expectations
+2024-03-03 01:58:41,205 - INFO - created new card: What is best linear predictor theorem \(\beta X\) is *minimum mean squared error estimator* of *dependent variable* *given* *independent variable*
+2024-03-03 01:58:41,206 - INFO - created new card: What atom has this definition: \(\beta X\) is *minimum mean squared error estimator* of *dependent variable* *given* *independent variable*  best linear predictor theorem
+2024-03-03 01:58:41,206 - INFO - created new card: What is equation of square \(f(x) = x^2
+2024-03-03 01:58:41,207 - INFO - created new card: What atom is this equation: \(f(x) = x^2 square
+2024-03-03 01:58:41,208 - INFO - created new card: What is equation of conditional expectation function prediction property \(E[Y | X] = argmin_{f(x)} E[(Y - f(x))^2]
+2024-03-03 01:58:41,209 - INFO - created new card: What atom is this equation: \(E[Y | X] = argmin_{f(x)} E[(Y - f(x))^2] conditional expectation function prediction property
+2024-03-03 01:58:41,210 - INFO - created new card: What is equation of regression residual \(Y - BX
+2024-03-03 01:58:41,211 - INFO - created new card: What atom is this equation: \(Y - BX regression residual
+2024-03-03 01:58:41,212 - INFO - created new card: What is regression conditional expectation theorem \(\beta X\) is *minimum mean squared error estimator* linear approximation to *conditional expectation function*
+2024-03-03 01:58:41,212 - INFO - created new card: What atom has this definition: \(\beta X\) is *minimum mean squared error estimator* linear approximation to *conditional expectation function*  regression conditional expectation theorem
+2024-03-03 01:58:41,213 - INFO - created new card: What is equation of anova theorem \(Var(Y) = Var(E[Y|X]) + E[Var(Y|X)]
+2024-03-03 01:58:41,214 - INFO - created new card: What atom is this equation: \(Var(Y) = Var(E[Y|X]) + E[Var(Y|X)] anova theorem
+2024-03-03 01:58:41,215 - INFO - created new card: What is equation of expectation \(\int p(x)x dx
+2024-03-03 01:58:41,216 - INFO - created new card: What atom is this equation: \(\int p(x)x dx expectation
+2024-03-03 01:58:41,216 - INFO - created new card: What is equation of intercept \(E[Y] - \beta *E[X**
+2024-03-03 01:58:41,217 - INFO - created new card: What atom is this equation: \(E[Y] - \beta *E[X** intercept
+2024-03-03 01:58:41,218 - INFO - created new card: What is equation of minimum mean squared error estimator \(f = argmin_{f(x)}E[(Y_i - f(x))^2]
+2024-03-03 01:58:41,219 - INFO - created new card: What atom is this equation: \(f = argmin_{f(x)}E[(Y_i - f(x))^2] minimum mean squared error estimator
+2024-03-03 01:58:41,220 - INFO - created new card: What is uncorrelated !not *correlation*
+2024-03-03 01:58:41,221 - INFO - created new card: What atom has this definition: !not *correlation*  uncorrelated
+2024-03-03 01:58:41,221 - INFO - created new card: What is design matrix matrix stacking *independent variable* for all data point
+2024-03-03 01:58:41,222 - INFO - created new card: What atom has this definition: matrix stacking *independent variable* for all data point  design matrix
+2024-03-03 01:58:41,223 - INFO - created new card: What is equation of variance \(E[(X - \mu)^2]
+2024-03-03 01:58:41,224 - INFO - created new card: What atom is this equation: \(E[(X - \mu)^2] variance
+2024-03-03 01:58:41,224 - INFO - created new card: What is equation of given \(|
+2024-03-03 01:58:41,225 - INFO - created new card: What atom is this equation: \(| given
+2024-03-03 01:58:43,049 - INFO - add cards called
+2024-03-03 01:58:45,396 - INFO - Studied atom given with previous settings (rep, ease, int)=(0.0,2.5,0.0) ease=2, updated to (0,2.1799999999999997,1)
+2024-03-03 01:58:58,683 - INFO - Studied atom variance with previous settings (rep, ease, int)=(0.0,2.5,0.0) ease=3, updated to (1.0,2.36,1)
+2024-03-03 01:59:09,671 - INFO - /Users/ferguscurrie/spaced/core/src/import_from_obsidian.py changed, reloading.
+2024-03-03 01:59:09,858 - INFO - Watching for file changes with StatReloader
+2024-03-03 01:59:22,394 - INFO - add cards called
+2024-03-03 01:59:23,544 - INFO - add cards called
+2024-03-03 01:59:23,554 - INFO - created new atom: covariate
+2024-03-03 01:59:23,558 - INFO - created new atom: regression error term
+2024-03-03 01:59:23,564 - INFO - created new atom: mean
+2024-03-03 01:59:23,568 - INFO - created new atom: dependent variable
+2024-03-03 01:59:23,572 - INFO - created new atom: regression function
+2024-03-03 01:59:23,574 - INFO - created new atom: conditional expectation function
+2024-03-03 01:59:23,576 - INFO - created new atom: argmin
+2024-03-03 01:59:23,578 - INFO - created new atom: conditional expectation decomposition property
+2024-03-03 01:59:23,580 - INFO - created new atom: law of iterated expectations
+2024-03-03 01:59:23,582 - INFO - created new atom: best linear predictor theorem
+2024-03-03 01:59:23,583 - INFO - created new atom: square
+2024-03-03 01:59:23,585 - INFO - created new atom: conditional expectation function prediction property
+2024-03-03 01:59:23,587 - INFO - created new atom: regression residual
+2024-03-03 01:59:23,589 - INFO - created new atom: regression conditional expectation theorem
+2024-03-03 01:59:23,591 - INFO - created new atom: anova theorem
+2024-03-03 01:59:23,593 - INFO - created new atom: expectation
+2024-03-03 01:59:23,595 - INFO - created new atom: intercept
+2024-03-03 01:59:23,596 - INFO - created new atom: minimum mean squared error estimator
+2024-03-03 01:59:23,598 - INFO - created new atom: uncorrelated
+2024-03-03 01:59:23,599 - INFO - created new atom: design matrix
+2024-03-03 01:59:23,601 - INFO - created new atom: variance
+2024-03-03 01:59:23,602 - INFO - created new atom: given
+2024-03-03 01:59:23,605 - INFO - created new card: What is equation of covariate \(X\)
+2024-03-03 01:59:23,606 - INFO - created new card: What atom is this equation: \(X\) covariate
+2024-03-03 01:59:23,607 - INFO - created new card: What is regression error term theoretical unexplained error of regression
+2024-03-03 01:59:23,608 - INFO - created new card: What atom has this definition: theoretical unexplained error of regression  regression error term
+2024-03-03 01:59:23,609 - INFO - created new card: What is equation of mean \(\dfrac{1}{n} \sum X - \mu_X\)
+2024-03-03 01:59:23,610 - INFO - created new card: What atom is this equation: \(\dfrac{1}{n} \sum X - \mu_X\) mean
+2024-03-03 01:59:23,611 - INFO - created new card: What is equation of dependent variable \(Y\)
+2024-03-03 01:59:23,612 - INFO - created new card: What atom is this equation: \(Y\) dependent variable
+2024-03-03 01:59:23,613 - INFO - created new card: What is equation of regression function \(Y = \beta_0 + \beta X + \epsilon\)
+2024-03-03 01:59:23,614 - INFO - created new card: What atom is this equation: \(Y = \beta_0 + \beta X + \epsilon\) regression function
+2024-03-03 01:59:23,615 - INFO - created new card: What is equation of conditional expectation function \(E[Y|X]\)
+2024-03-03 01:59:23,616 - INFO - created new card: What atom is this equation: \(E[Y|X]\) conditional expectation function
+2024-03-03 01:59:23,617 - INFO - created new card: What is argmin return argument which minimise function
+2024-03-03 01:59:23,618 - INFO - created new card: What atom has this definition: return argument which minimise function  argmin
+2024-03-03 01:59:23,619 - INFO - created new card: What is equation of conditional expectation decomposition property \(Y = E[Y | X] + \epsilon\)
+2024-03-03 01:59:23,620 - INFO - created new card: What atom is this equation: \(Y = E[Y | X] + \epsilon\) conditional expectation decomposition property
+2024-03-03 01:59:23,620 - INFO - created new card: What is equation of law of iterated expectations \(E[Y] = E[E[Y|X]]\)
+2024-03-03 01:59:23,621 - INFO - created new card: What atom is this equation: \(E[Y] = E[E[Y|X]]\) law of iterated expectations
+2024-03-03 01:59:23,622 - INFO - created new card: What is best linear predictor theorem \(\beta X\) is [[minimum mean squared error estimator]] of [[dependent variable]] [[given]] [[independent variable]]
+2024-03-03 01:59:23,623 - INFO - created new card: What atom has this definition: \(\beta X\) is [[minimum mean squared error estimator]] of [[dependent variable]] [[given]] [[independent variable]]  best linear predictor theorem
+2024-03-03 01:59:23,624 - INFO - created new card: What is equation of square \(f(x) = x^2\)
+2024-03-03 01:59:23,625 - INFO - created new card: What atom is this equation: \(f(x) = x^2\) square
+2024-03-03 01:59:23,626 - INFO - created new card: What is equation of conditional expectation function prediction property \(E[Y | X] = argmin_{f(x)} E[(Y - f(x))^2]\)
+2024-03-03 01:59:23,626 - INFO - created new card: What atom is this equation: \(E[Y | X] = argmin_{f(x)} E[(Y - f(x))^2]\) conditional expectation function prediction property
+2024-03-03 01:59:23,627 - INFO - created new card: What is equation of regression residual \(Y - BX\)
+2024-03-03 01:59:23,628 - INFO - created new card: What atom is this equation: \(Y - BX\) regression residual
+2024-03-03 01:59:23,629 - INFO - created new card: What is regression conditional expectation theorem \(\beta X\) is [[minimum mean squared error estimator]] linear approximation to [[conditional expectation function]]
+2024-03-03 01:59:23,630 - INFO - created new card: What atom has this definition: \(\beta X\) is [[minimum mean squared error estimator]] linear approximation to [[conditional expectation function]]  regression conditional expectation theorem
+2024-03-03 01:59:23,630 - INFO - created new card: What is equation of anova theorem \(Var(Y) = Var(E[Y|X]) + E[Var(Y|X)]\)
+2024-03-03 01:59:23,631 - INFO - created new card: What atom is this equation: \(Var(Y) = Var(E[Y|X]) + E[Var(Y|X)]\) anova theorem
+2024-03-03 01:59:23,632 - INFO - created new card: What is equation of expectation \(\int p(x)x dx\)
+2024-03-03 01:59:23,633 - INFO - created new card: What atom is this equation: \(\int p(x)x dx\) expectation
+2024-03-03 01:59:23,634 - INFO - created new card: What is equation of intercept \(E[Y] - \beta [[E[X]]]\)
+2024-03-03 01:59:23,635 - INFO - created new card: What atom is this equation: \(E[Y] - \beta [[E[X]]]\) intercept
+2024-03-03 01:59:23,635 - INFO - created new card: What is equation of minimum mean squared error estimator \(f = argmin_{f(x)}E[(Y_i - f(x))^2]\)
+2024-03-03 01:59:23,636 - INFO - created new card: What atom is this equation: \(f = argmin_{f(x)}E[(Y_i - f(x))^2]\) minimum mean squared error estimator
+2024-03-03 01:59:23,637 - INFO - created new card: What is uncorrelated !not [[correlation]]
+2024-03-03 01:59:23,638 - INFO - created new card: What atom has this definition: !not [[correlation]]  uncorrelated
+2024-03-03 01:59:23,639 - INFO - created new card: What is design matrix matrix stacking [[independent variable]] for all data points
+2024-03-03 01:59:23,639 - INFO - created new card: What atom has this definition: matrix stacking [[independent variable]] for all data points  design matrix
+2024-03-03 01:59:23,640 - INFO - created new card: What is equation of variance \(E[(X - \mu)^2]\)
+2024-03-03 01:59:23,641 - INFO - created new card: What atom is this equation: \(E[(X - \mu)^2]\) variance
+2024-03-03 01:59:23,642 - INFO - created new card: What is equation of given \(|\)
+2024-03-03 01:59:23,642 - INFO - created new card: What atom is this equation: \(|\) given
